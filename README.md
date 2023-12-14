@@ -23,7 +23,7 @@ Bem-vindo ao Awesome To-Do List, uma aplicação incrível para gerenciar suas t
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-## 📚 Bibliotecas
+### 📚 Bibliotecas
 
 - [Google Fonts](https://fonts.google.com/)
 - [Remix Icons](https://remixicon.com/)
