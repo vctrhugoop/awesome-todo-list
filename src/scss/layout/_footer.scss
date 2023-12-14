@@ -1,0 +1,16 @@
+footer {
+  text-align: center;
+
+  p {
+    color: var(--gray-100);
+
+    a {
+      color: var(--blue);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--blue-dark);
+      }
+    }
+  }
+}
