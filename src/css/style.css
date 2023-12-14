@@ -9,8 +9,8 @@
   --gray-100: #f2f2f2;
   --blue: #75b1fa;
   --blue-dark: #3974bd;
-  --purple: #8284fa;
-  --purple-dark: #5e60ce;
+  --green: #43a047;
+  --green-light: #6ad86e;
   --danger: #e25858;
 }
 
@@ -124,7 +124,7 @@ header p {
   color: var(--gray-200);
 }
 .info__content:last-child p {
-  color: var(--purple);
+  color: var(--green);
 }
 
 ul {
@@ -169,10 +169,10 @@ ul li.concluded {
   border: 1px solid var(--gray-500);
 }
 ul li.concluded .btn-check {
-  color: var(--purple-dark);
+  color: var(--green);
 }
 ul li.concluded .btn-check:hover {
-  color: var(--purple);
+  color: var(--green-light);
 }
 ul li.concluded p {
   color: var(--gray-300);
@@ -208,7 +208,7 @@ ul li:hover {
   background: var(--gray-500);
 }
 .input-wrapper input:focus {
-  border: 1px solid var(--purple-dark);
+  border: 1px solid var(--blue-dark);
 }
 .input-wrapper input::placeholder {
   color: var(--Gray-300, #808080);
