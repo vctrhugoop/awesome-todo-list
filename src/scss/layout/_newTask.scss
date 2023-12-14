@@ -1,0 +1,57 @@
+.input-wrapper {
+  background-color: var(--gray-op);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+
+  padding: 2.4rem;
+
+  input {
+    max-width: 70rem;
+    opacity: 1;
+    z-index: 999;
+    padding: 1.6rem;
+    width: 100%;
+    color: var(--gray-100);
+    font-size: 1.6rem;
+    line-height: 140%;
+
+    border-radius: 0.8rem;
+
+    background: var(--gray-500);
+
+    &:focus {
+      border: 1px solid var(--purple-dark);
+    }
+
+    &::placeholder {
+      color: var(--Gray-300, #808080);
+    }
+  }
+
+  button {
+    padding: 1.6rem;
+    background: var(--blue-dark);
+    border-radius: 8px;
+
+    color: var(--gray-100);
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    i {
+      font-size: 1.6rem;
+    }
+
+    &:hover {
+      background-color: var(--blue);
+    }
+  }
+}
