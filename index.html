@@ -17,24 +17,28 @@
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
     <div class="input-wrapper hide">
-      <label for="task" class="sr-only">Adicione uma nova tarefa</label>
-      <input
-        type="text"
-        name="task"
-        id="task"
-        placeholder="Adicione uma nova tarefa"
-      />
-      <button id="task-btn" name="Criar nova tarefa"> 
+      <div class="input-data">
+        <label for="task" class="sr-only">Adicione uma nova tarefa</label>
+        <input
+          type="text"
+          name="task"
+          id="task"
+          placeholder="Adicione uma nova tarefa"
+        />
+        <label for="priority" class="sr-only">Adicione uma prioridade</label>
+        <input list="priority" placeholder="Prioridade" />
+        <datalist id="priority">
+          <option value="BAIXA"></option>
+          <option value="MÉDIA"></option>
+          <option value="ALTA"></option>
+        </datalist>
+      </div>
+      <button class="btn" id="task-btn" name="Criar nova tarefa">
         Criar nova tarefa
-        <i class="ri-add-circle-line"></i>
-        
       </button>
     </div>
     <div id="app">
@@ -49,7 +53,6 @@
         <p>Awesome</p>
       </header>
       <main>
-        
         <section class="info">
           <div class="info__content">
             <p>Tarefas criadas</p>
@@ -62,27 +65,64 @@
         </section>
         <section class="task-list">
           <ul>
-            <li>
-              <button class="btn-check"><i class="ri-circle-line"></i></button>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn-remove">
-                <i class="ri-delete-bin-5-line"></i>
-              </button>
+            <li class="task-wrapper">
+              <div class="content">
+                <button class="btn-check"><i class="ph ph-circle"></i></button>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="btn-remove">
+                  <i class="ph ph-trash"></i>
+                </button>
+              </div>
+              <div class="tag high">
+                <i class="ph-fill ph-tag"></i>
+                <p>ALTA</p>
+              </div>
             </li>
             <li class="concluded">
-              <button class="btn-check"><i class="ri-checkbox-circle-fill"></i></i></button>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn-remove">
-                <i class="ri-delete-bin-5-line"></i>
-              </button>
+              <div class="content">
+                <button class="btn-check">
+                  <i class="ph-fill ph-check-circle"></i>
+                </button>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="btn-remove">
+                  <i class="ph ph-trash"></i>
+                </button>
+              </div>
+              <div class="tag low">
+                <i class="ph-fill ph-tag"></i>
+                <p>BAIXA</p>
+              </div>
             </li>
+            <li class="concluded">
+              <div class="content">
+                <button class="btn-check">
+                  <i class="ph-fill ph-check-circle"></i>
+                </button>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button class="btn-remove">
+                  <i class="ph ph-trash"></i>
+                </button>
+              </div>
+              <div class="tag medium">
+                <i class="ph-fill ph-tag"></i>
+                <p>MÉDIO</p>
+              </div>
+            </li>
+          </ul>
         </section>
         <section class="new-task">
-          <button id="btn-new-task"><i class="ri-add-line"></i></button>
+          <button class="btn" id="btn-new-task">
+            <i class="ph ph-plus"></i>
+          </button>
         </section>
-      </main>     
+      </main>
       <footer>
-        <p>Feito com 💙 por <a href="https://github.com/vctrhugoop" target="_blank">Victor Oliveira</a></p>
+        <p>
+          Feito com 💙 por
+          <a href="https://github.com/vctrhugoop" target="_blank"
+            >Victor Oliveira</a
+          >
+        </p>
       </footer>
     </div>
     <script type="module" src="/src/js/main.js"></script>
