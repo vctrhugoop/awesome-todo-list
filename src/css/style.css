@@ -9,8 +9,8 @@
   --gray-100: #f2f2f2;
   --blue: #75b1fa;
   --blue-dark: #3974bd;
-  --green: #43a047;
-  --green-light: #6ad86e;
+  --green: #57d45d;
+  --warning: #d3a151;
   --danger: #e25858;
 }
 
@@ -83,6 +83,102 @@ body .hide {
   display: none;
 }
 
+p {
+  font-size: 1.4rem;
+  color: var(--gray-100);
+}
+
+.tag {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--gray-300);
+}
+.tag p {
+  border-radius: 0.5rem;
+  color: var(--gray-700);
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+}
+.tag.high p {
+  background-color: var(--danger);
+}
+.tag.low p {
+  background-color: var(--green);
+}
+.tag.medium p {
+  background-color: var(--warning);
+}
+
+input {
+  max-width: 70rem;
+  opacity: 1;
+  z-index: 999;
+  padding: 1.6rem;
+  width: 100%;
+  color: var(--gray-100);
+  font-size: 1.6rem;
+  line-height: 140%;
+  border-radius: 0.8rem;
+  background: var(--gray-500);
+}
+input:focus {
+  border: 1px solid var(--blue-dark);
+}
+input::placeholder {
+  color: var(--Gray-300, #808080);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+button.btn {
+  border-radius: 0.8rem;
+  background-color: var(--blue-dark);
+  padding: 1.2rem;
+  color: var(--gray-100);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 140%;
+}
+button.btn:hover {
+  background-color: var(--blue);
+}
+button.btn-check, button.btn-remove {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--gray-300);
+}
+button.btn-remove:hover {
+  color: var(--danger);
+}
+
+li {
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--gray-400);
+  background-color: var(--gray-500);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+li.concluded {
+  border: 1px solid var(--gray-500);
+}
+li.concluded .content .btn-check {
+  color: var(--green);
+}
+li.concluded .content p {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+li:hover {
+  background-color: var(--gray-400);
+}
+
 header {
   display: flex;
   align-items: center;
@@ -112,7 +208,6 @@ header p {
 }
 .info__content p {
   color: var(--blue);
-  font-size: 1.4rem;
   font-weight: 700;
 }
 .info__content span {
@@ -130,56 +225,16 @@ header p {
 ul {
   margin-top: 2.4rem;
 }
-ul li {
-  border-radius: 0.8rem;
-  border: 0.1rem solid var(--gray-400);
-  background-color: var(--gray-500);
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
-  padding: 1.6rem;
-  margin-bottom: 1.6rem;
+ul li .content {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
 }
-ul li .btn-check,
-ul li .btn-remove {
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-ul li .btn-check {
-  color: var(--blue);
-}
-ul li .btn-remove {
-  color: var(--gray-300);
-}
-ul li .btn-remove:hover {
-  color: var(--danger);
-}
-ul li p {
+ul li .content p {
   flex: 1 0 0;
-  color: var(--gray-100);
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 140%;
   word-break: break-all;
   text-align: left;
-}
-ul li.concluded {
-  border: 1px solid var(--gray-500);
-}
-ul li.concluded .btn-check {
-  color: var(--green);
-}
-ul li.concluded .btn-check:hover {
-  color: var(--green-light);
-}
-ul li.concluded p {
-  color: var(--gray-300);
-  text-decoration: line-through;
-}
-ul li:hover {
-  background-color: var(--gray-400);
 }
 
 .input-wrapper {
@@ -195,37 +250,14 @@ ul li:hover {
   gap: 2.4rem;
   padding: 2.4rem;
 }
-.input-wrapper input {
-  max-width: 70rem;
-  opacity: 1;
-  z-index: 999;
-  padding: 1.6rem;
+.input-wrapper .input-data {
   width: 100%;
-  color: var(--gray-100);
-  font-size: 1.6rem;
-  line-height: 140%;
-  border-radius: 0.8rem;
-  background: var(--gray-500);
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
 }
-.input-wrapper input:focus {
-  border: 1px solid var(--blue-dark);
-}
-.input-wrapper input::placeholder {
-  color: var(--Gray-300, #808080);
-}
-.input-wrapper button {
-  padding: 1.6rem;
-  background: var(--blue-dark);
-  border-radius: 8px;
-  color: var(--gray-100);
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-.input-wrapper button i {
-  font-size: 1.6rem;
-}
-.input-wrapper button:hover {
-  background-color: var(--blue);
+.input-wrapper .input-data input:nth-child(4) {
+  width: 14rem;
 }
 
 .new-task {
@@ -233,19 +265,6 @@ ul li:hover {
   bottom: 0;
   right: 0;
   margin-bottom: 1.8rem;
-}
-.new-task button {
-  border-radius: 0.8rem;
-  background-color: var(--blue-dark);
-  padding: 1rem 1.2rem;
-  color: var(--gray-100);
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 140%;
-  cursor: pointer;
-}
-.new-task button:hover {
-  background-color: var(--blue);
 }
 
 footer {

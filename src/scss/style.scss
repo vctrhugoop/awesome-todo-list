@@ -1,7 +1,15 @@
 @use 'utils/variables';
 @use 'utils/screenReader';
+
 @use 'base/reset';
 @use 'base/base';
+@use 'base/typography';
+
+@use 'components/tag';
+@use 'components/input';
+@use 'components/button';
+@use 'components/list';
+
 @use 'layout/header';
 @use 'layout/info';
 @use 'layout/taskList';

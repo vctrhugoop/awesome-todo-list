@@ -2,64 +2,17 @@ ul {
   margin-top: 2.4rem;
 
   li {
-    border-radius: 0.8rem;
-    border: 0.1rem solid var(--gray-400);
-    background-color: var(--gray-500);
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
 
-    padding: 1.6rem;
-    margin-bottom: 1.6rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 1.2rem;
-
-    .btn-check,
-    .btn-remove {
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    .btn-check {
-      color: var(--blue);
-    }
-
-    .btn-remove {
-      color: var(--gray-300);
-      &:hover {
-        color: var(--danger);
-      }
-    }
-
-    p {
-      flex: 1 0 0;
-      color: var(--gray-100);
-      font-size: 1.4rem;
-      font-weight: 400;
-      line-height: 140%;
-      word-break: break-all;
-      text-align: left;
-    }
-
-    &.concluded {
-      border: 1px solid var(--gray-500);
-
-      .btn-check {
-        color: var(--green);
-        &:hover {
-          color: var(--green-light);
-        }
-      }
       p {
-        color: var(--gray-300);
-        text-decoration: line-through;
+        flex: 1 0 0;
+        word-break: break-all;
+        text-align: left;
       }
-    }
-
-    &:hover {
-      background-color: var(--gray-400);
     }
   }
 }

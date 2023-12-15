@@ -1,0 +1,22 @@
+input {
+  max-width: 70rem;
+  opacity: 1;
+  z-index: 999;
+  padding: 1.6rem;
+  width: 100%;
+  color: var(--gray-100);
+  font-size: 1.6rem;
+  line-height: 140%;
+
+  border-radius: 0.8rem;
+
+  background: var(--gray-500);
+
+  &:focus {
+    border: 1px solid var(--blue-dark);
+  }
+
+  &::placeholder {
+    color: var(--Gray-300, #808080);
+  }
+}

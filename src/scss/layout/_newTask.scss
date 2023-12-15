@@ -13,45 +13,16 @@
 
   padding: 2.4rem;
 
-  input {
-    max-width: 70rem;
-    opacity: 1;
-    z-index: 999;
-    padding: 1.6rem;
+  .input-data {
     width: 100%;
-    color: var(--gray-100);
-    font-size: 1.6rem;
-    line-height: 140%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2rem;
 
-    border-radius: 0.8rem;
-
-    background: var(--gray-500);
-
-    &:focus {
-      border: 1px solid var(--blue-dark);
-    }
-
-    &::placeholder {
-      color: var(--Gray-300, #808080);
-    }
-  }
-
-  button {
-    padding: 1.6rem;
-    background: var(--blue-dark);
-    border-radius: 8px;
-
-    color: var(--gray-100);
-    font-size: 1.4rem;
-
-    cursor: pointer;
-
-    i {
-      font-size: 1.6rem;
-    }
-
-    &:hover {
-      background-color: var(--blue);
+    input {
+      &:nth-child(4) {
+        width: 14rem;
+      }
     }
   }
 }
