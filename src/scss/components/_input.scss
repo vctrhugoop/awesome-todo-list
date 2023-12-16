@@ -1,22 +1,32 @@
-input {
-  max-width: 70rem;
-  opacity: 1;
-  z-index: 999;
+input,
+select,
+textarea {
+  background: var(--gray-500);
   padding: 1.6rem;
-  width: 100%;
   color: var(--gray-100);
   font-size: 1.6rem;
-  line-height: 140%;
-
   border-radius: 0.8rem;
+}
 
-  background: var(--gray-500);
+input {
+  width: 100%;
+
+  color: var(--gray-100);
+  line-height: 140%;
 
   &:focus {
     border: 1px solid var(--blue-dark);
   }
 
   &::placeholder {
-    color: var(--Gray-300, #808080);
+    color: var(--gray-300);
   }
+}
+
+select:focus {
+  border: 1px solid var(--blue-dark);
+}
+
+textarea {
+  width: 100%;
 }

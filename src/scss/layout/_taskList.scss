@@ -5,13 +5,32 @@ ul {
     .content {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 1.2rem;
+      gap: 1rem;
+      margin-bottom: 1rem;
 
-      p {
-        flex: 1 0 0;
-        word-break: break-all;
-        text-align: left;
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        p {
+          flex: 1 0 0;
+          word-break: break-all;
+          text-align: left;
+        }
+      }
+    }
+    .utils {
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--gray-300);
+
+      .btn-utils {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
       }
     }
   }

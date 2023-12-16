@@ -10,15 +10,19 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'Overpass', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 input,
-button {
+button,
+select,
+textarea {
   border: none;
   outline: none;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 button {

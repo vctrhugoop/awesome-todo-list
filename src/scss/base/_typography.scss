@@ -1,4 +1,20 @@
+body,
+p,
+h3,
+input,
+select,
+textarea,
+button {
+  font-family: 'Overpass', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 p {
   font-size: 1.4rem;
+  color: var(--gray-200);
+}
+
+h3 {
   color: var(--gray-100);
 }

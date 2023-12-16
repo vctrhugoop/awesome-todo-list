@@ -22,24 +22,41 @@
   <body>
     <div class="input-wrapper hide">
       <div class="input-data">
-        <label for="task" class="sr-only">Adicione uma nova tarefa</label>
+        <label for="task-title" class="sr-only">Adicione uma nova tarefa</label>
         <input
           type="text"
-          name="task"
-          id="task"
-          placeholder="Adicione uma nova tarefa"
+          name="ttask-title"
+          id="task-title"
+          placeholder="Título"
         />
-        <label for="priority" class="sr-only">Adicione uma prioridade</label>
-        <input list="priority" placeholder="Prioridade" />
-        <datalist id="priority">
-          <option value="BAIXA"></option>
-          <option value="MÉDIA"></option>
-          <option value="ALTA"></option>
-        </datalist>
+        <label for="task-description" class="sr-only"
+          >Adicione uma nova tarefa</label
+        >
+        <textarea
+          name="task-description"
+          id="task-description"
+          placeholder="Descrição da tafera"
+        ></textarea>
+
+        <label for="select-priority" class="sr-only"
+          >Selecione uma prioridade</label
+        >
+        <select id="select-priority" name="select-priority">
+          <option value="Selecione" selected>
+            Selecione uma prioridade...
+          </option>
+          <option value="BAIXA">BAIXA</option>
+          <option value="MÉDIA">MÉDIA</option>
+          <option value="ALTA">ALTA</option>
+        </select>
+
+        <div class="btn-wrapper">
+          <button class="btn" id="cancel-btn" name="Cancelar">Cancelar</button>
+          <button class="btn" id="task-btn" name="Criar nova tarefa">
+            Criar nova tarefa
+          </button>
+        </div>
       </div>
-      <button class="btn" id="task-btn" name="Criar nova tarefa">
-        Criar nova tarefa
-      </button>
     </div>
     <div id="app">
       <header>
@@ -53,6 +70,18 @@
         <p>Awesome</p>
       </header>
       <main>
+        <section class="search">
+          <label for="search-task" class="sr-only">Procurar tarefe</label>
+          <input
+            type="search"
+            name="search-task"
+            id="search-task"
+            placeholder="Pesquisar tarefa"
+          />
+          <button class="btn" id="btn-search-task" name="btn-search-task">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+        </section>
         <section class="info">
           <div class="info__content">
             <p>Tarefas criadas</p>
@@ -65,50 +94,64 @@
         </section>
         <section class="task-list">
           <ul>
+            <li class="task-wrapper concluded">
+              <div class="content">
+                <button class="btn-check">
+                  <i class="ph-fill ph-check-circle"></i>
+                </button>
+                <div class="text">
+                  <h3>Título</h3>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </div>
+              <div class="utils">
+                <div class="tag medium">
+                  <i class="ph-fill ph-tag"></i>
+                  <p>MÉDIA</p>
+                </div>
+                <div class="btn-utils">
+                  <button class="btn-edit">
+                    <i class="ph ph-pencil-simple"></i>
+                  </button>
+                  <button class="btn-remove">
+                    <i class="ph ph-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </li>
             <li class="task-wrapper">
               <div class="content">
                 <button class="btn-check"><i class="ph ph-circle"></i></button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <button class="btn-remove">
-                  <i class="ph ph-trash"></i>
-                </button>
+                <div class="text">
+                  <h3>Título</h3>
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
               </div>
-              <div class="tag high">
-                <i class="ph-fill ph-tag"></i>
-                <p>ALTA</p>
-              </div>
-            </li>
-            <li class="concluded">
-              <div class="content">
-                <button class="btn-check">
-                  <i class="ph-fill ph-check-circle"></i>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <button class="btn-remove">
-                  <i class="ph ph-trash"></i>
-                </button>
-              </div>
-              <div class="tag low">
-                <i class="ph-fill ph-tag"></i>
-                <p>BAIXA</p>
-              </div>
-            </li>
-            <li class="concluded">
-              <div class="content">
-                <button class="btn-check">
-                  <i class="ph-fill ph-check-circle"></i>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <button class="btn-remove">
-                  <i class="ph ph-trash"></i>
-                </button>
-              </div>
-              <div class="tag medium">
-                <i class="ph-fill ph-tag"></i>
-                <p>MÉDIO</p>
+              <div class="utils">
+                <div class="tag high">
+                  <i class="ph-fill ph-tag"></i>
+                  <p>ALTA</p>
+                </div>
+                <div class="btn-utils">
+                  <button class="btn-edit">
+                    <i class="ph ph-pencil-simple"></i>
+                  </button>
+                  <button class="btn-remove">
+                    <i class="ph ph-trash"></i>
+                  </button>
+                </div>
               </div>
             </li>
           </ul>
+        </section>
+        <section class="empty hide">
+          <figure><img src="/src/assets/image-empty.svg" alt="" /></figure>
+
+          <p>Nenhuma Tarefa</p>
         </section>
         <section class="new-task">
           <button class="btn" id="btn-new-task">
