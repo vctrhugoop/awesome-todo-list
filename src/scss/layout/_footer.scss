@@ -5,11 +5,11 @@ footer {
     color: var(--gray-100);
 
     a {
-      color: var(--blue);
+      color: var(--blue-dark);
       cursor: pointer;
 
       &:hover {
-        color: var(--blue-dark);
+        color: var(--blue);
       }
     }
   }

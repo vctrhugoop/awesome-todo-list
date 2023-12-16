@@ -9,9 +9,9 @@
   --gray-100: #f2f2f2;
   --blue: #75b1fa;
   --blue-dark: #3974bd;
-  --green: #57d45d;
-  --warning: #d3a151;
-  --danger: #e25858;
+  --green: #7db842;
+  --warning: #e9b803;
+  --danger: #f23a4b;
 }
 
 .sr-only {
@@ -115,11 +115,12 @@ h3 {
   color: var(--gray-300);
 }
 .tag p {
+  text-align: center;
   border-radius: 0.5rem;
-  color: var(--gray-700);
+  color: var(--gray-100);
   font-weight: 700;
   font-size: 1.2rem;
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.4rem 0;
 }
 .tag.high p {
   background-color: var(--danger);
@@ -278,33 +279,43 @@ header p {
   color: var(--green);
 }
 
-ul {
+.task-list {
   margin-top: 2.4rem;
+  overflow-y: scroll;
+  height: 32rem;
 }
-ul li .content {
+.task-list::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .task-list {
+    height: 50rem;
+  }
+}
+.task-list ul li .content {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
-ul li .content .text {
+.task-list ul li .content .text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-ul li .content .text p {
+.task-list ul li .content .text p {
   flex: 1 0 0;
   word-break: break-all;
   text-align: left;
 }
-ul li .utils {
-  padding-top: 1rem;
+.task-list ul li .utils {
+  padding-top: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--gray-300);
 }
-ul li .utils .btn-utils {
+.task-list ul li .utils .btn-utils {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -359,11 +370,11 @@ footer p {
   color: var(--gray-100);
 }
 footer p a {
-  color: var(--blue);
+  color: var(--blue-dark);
   cursor: pointer;
 }
 footer p a:hover {
-  color: var(--blue-dark);
+  color: var(--blue);
 }
 
 .empty {

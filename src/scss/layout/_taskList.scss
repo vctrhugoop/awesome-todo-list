@@ -1,36 +1,45 @@
-ul {
+.task-list {
   margin-top: 2.4rem;
-
-  li {
-    .content {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        p {
-          flex: 1 0 0;
-          word-break: break-all;
-          text-align: left;
-        }
-      }
-    }
-    .utils {
-      padding-top: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--gray-300);
-
-      .btn-utils {
+  overflow-y: scroll;
+  height: 32rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    height: 50rem;
+  }
+  ul {
+    li {
+      .content {
         display: flex;
         align-items: center;
-        gap: 1.2rem;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          p {
+            flex: 1 0 0;
+            word-break: break-all;
+            text-align: left;
+          }
+        }
+      }
+      .utils {
+        padding-top: 1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid var(--gray-300);
+
+        .btn-utils {
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+        }
       }
     }
   }

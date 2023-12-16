@@ -5,11 +5,12 @@
   color: var(--gray-300);
 
   p {
+    text-align: center;
     border-radius: 0.5rem;
-    color: var(--gray-700);
+    color: var(--gray-100);
     font-weight: 700;
     font-size: 1.2rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.4rem 0;
   }
 
   &.high {
