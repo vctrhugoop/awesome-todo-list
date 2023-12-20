@@ -3,6 +3,7 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: color 0.2s ease;
 
   &.btn {
     border-radius: 0.8rem;

@@ -1,0 +1,50 @@
+.priority {
+  position: absolute;
+  top: 11rem;
+  left: 1.5rem;
+  z-index: 1;
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--gray-400);
+  background-color: var(--gray-500);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+
+  .priority-list {
+    text-align: left;
+    width: 13rem;
+
+    .list-item {
+      display: flex;
+      align-items: center;
+
+      p {
+        color: var(--gray-300);
+        padding: 1rem;
+        cursor: pointer;
+        &:hover {
+          color: var(--gray-100);
+        }
+      }
+
+      .cicle-low {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: var(--green);
+      }
+      .cicle-medium {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: var(--warning);
+      }
+      .cicle-high {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: var(--danger);
+      }
+    }
+  }
+}

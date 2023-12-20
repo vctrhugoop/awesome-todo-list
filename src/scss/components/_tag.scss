@@ -3,31 +3,37 @@
   align-items: center;
   gap: 0.8rem;
   color: var(--gray-300);
-
-  p {
-    text-align: center;
-    border-radius: 0.5rem;
-    color: var(--gray-100);
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding: 0.2rem 0.4rem 0;
-  }
+  font-weight: 600;
+  font-size: 1.2rem;
 
   &.high {
-    p {
+    span {
       background-color: var(--danger);
+      border-radius: 0.5rem;
+      color: var(--gray-100);
+      padding: 0.2rem 0.4rem 0;
     }
   }
 
   &.low {
-    p {
+    span {
       background-color: var(--green);
+      border-radius: 0.5rem;
+      color: var(--gray-100);
+      padding: 0.2rem 0.4rem 0;
     }
   }
 
   &.medium {
-    p {
+    span {
       background-color: var(--warning);
+      border-radius: 0.5rem;
+      color: var(--gray-100);
+      padding: 0.2rem 0.4rem 0;
     }
+  }
+
+  &:hover {
+    color: var(--gray-200);
   }
 }

@@ -1,14 +1,13 @@
 .task-list {
   margin-top: 2.4rem;
+  height: calc(100vh - 30rem);
   overflow-y: scroll;
-  height: 32rem;
+
   &::-webkit-scrollbar {
     display: none;
   }
-  @media screen and (min-width: 768px) {
-    height: 50rem;
-  }
   ul {
+    position: relative;
     li {
       .content {
         display: flex;
