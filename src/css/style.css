@@ -146,17 +146,19 @@ textarea {
   font-size: 1.6rem;
   border-radius: 0.8rem;
 }
+input:focus,
+textarea:focus {
+  border: 1px solid var(--blue-dark);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--gray-300);
+}
 
 input {
   width: 100%;
   color: var(--gray-100);
   line-height: 140%;
-}
-input:focus {
-  border: 1px solid var(--blue-dark);
-}
-input::placeholder {
-  color: var(--gray-300);
 }
 
 textarea {
@@ -166,8 +168,6 @@ textarea {
 
 button {
   display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -178,7 +178,6 @@ button.btn {
   color: var(--gray-100);
   font-size: 1.4rem;
   font-weight: 700;
-  line-height: 140%;
 }
 button.btn:hover {
   background-color: var(--blue);
@@ -227,11 +226,58 @@ li:hover {
   background-color: var(--gray-400);
 }
 
+.priority {
+  position: absolute;
+  top: 90%;
+  left: 1.5rem;
+  z-index: 1;
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--gray-400);
+  background-color: var(--gray-500);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+.priority .priority-list {
+  text-align: left;
+  width: 13rem;
+}
+.priority .priority-list .list-item {
+  display: flex;
+  align-items: center;
+}
+.priority .priority-list .list-item p {
+  color: var(--gray-300);
+  padding: 1rem;
+  cursor: pointer;
+}
+.priority .priority-list .list-item p:hover {
+  color: var(--gray-100);
+}
+.priority .priority-list .list-item .cicle-low {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--green);
+}
+.priority .priority-list .list-item .cicle-medium {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--warning);
+}
+.priority .priority-list .list-item .cicle-high {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--danger);
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 0.4rem;
 }
 header #logo {
   width: 4.8rem;
@@ -289,7 +335,7 @@ header p {
 .task-list::-webkit-scrollbar {
   display: none;
 }
-.task-list ul {
+.task-list ul li {
   position: relative;
 }
 .task-list ul li .content {
@@ -319,53 +365,6 @@ header p {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-}
-
-.priority {
-  position: absolute;
-  top: 90%;
-  left: 1.5rem;
-  z-index: 1;
-  border-radius: 0.8rem;
-  border: 0.1rem solid var(--gray-400);
-  background-color: var(--gray-500);
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
-  padding: 1.6rem;
-  margin-bottom: 1.6rem;
-}
-.priority .priority-list {
-  text-align: left;
-  width: 13rem;
-}
-.priority .priority-list .list-item {
-  display: flex;
-  align-items: center;
-}
-.priority .priority-list .list-item p {
-  color: var(--gray-300);
-  padding: 1rem;
-  cursor: pointer;
-}
-.priority .priority-list .list-item p:hover {
-  color: var(--gray-100);
-}
-.priority .priority-list .list-item .cicle-low {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--green);
-}
-.priority .priority-list .list-item .cicle-medium {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--warning);
-}
-.priority .priority-list .list-item .cicle-high {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--danger);
 }
 
 .input-wrapper {

@@ -5,33 +5,7 @@ export class NewTask {
   }
 
   load() {
-    this.entries = [
-      {
-        title: 'Tarefa 1',
-        description:
-          'Lorem ipsum dolor sit amet. Et sunt voluptas sit fugiat voluptatem vel quia quisquam.',
-      },
-      {
-        title: 'Tarefa 2',
-        description:
-          'Lorem ipsum dolor sit amet. Et sunt voluptas sit fugiat voluptatem vel quia quisquam.',
-      },
-      {
-        title: 'Tarefa 3',
-        description:
-          'Lorem ipsum dolor sit amet. Et sunt voluptas sit fugiat voluptatem vel quia quisquam.',
-      },
-      {
-        title: 'Tarefa 4',
-        description:
-          'Lorem ipsum dolor sit amet. Et sunt voluptas sit fugiat voluptatem vel quia quisquam.',
-      },
-      {
-        title: 'Tarefa 5',
-        description:
-          'Lorem ipsum dolor sit amet. Et sunt voluptas sit fugiat voluptatem vel quia quisquam.',
-      },
-    ];
+    this.entries = [];
   }
 }
 
@@ -39,12 +13,13 @@ export class NewTaskView extends NewTask {
   constructor(root) {
     super(root);
 
-    this.taskList = this.root.querySelector('main .task-list');
+    this.taskList = this.root.querySelector('main .task-list ul');
 
     this.update();
   }
 
   update() {
+    this.emptyState();
     this.removeAllTaskList();
 
     this.entries.forEach(data => {
@@ -58,10 +33,11 @@ export class NewTaskView extends NewTask {
   }
 
   createTask() {
-    const createlist = document.createElement('ul');
+    const createlist = Object.assign(document.createElement('li'), {
+      classList: ['task-wrapper'],
+    });
 
     createlist.innerHTML = `
-      <li class="task-wrapper">
         <div class="content">
           <button class="btn-check"><i class="ph ph-circle"></i></button>
           <div class="text">
@@ -84,7 +60,6 @@ export class NewTaskView extends NewTask {
             </button>
           </div>
         </div>
-      </li>
       <div class="priority hide">
         <div class="priority-list">
           <div class="list-item">
@@ -109,5 +84,15 @@ export class NewTaskView extends NewTask {
     this.taskList.querySelectorAll('ul').forEach(list => {
       list.remove();
     });
+  }
+
+  emptyState() {
+    if (this.entries.length === 0) {
+      this.root.querySelector('.empty').classList.remove('hide');
+      this.root.querySelector('.task-list').classList.add('hide');
+    } else {
+      this.root.querySelector('.empty').classList.add('hide');
+      this.root.querySelector('.task-list').classList.remove('hide');
+    }
   }
 }

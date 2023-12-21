@@ -1,7 +1,5 @@
 button {
   display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   transition: color 0.2s ease;
 
@@ -12,7 +10,6 @@ button {
     color: var(--gray-100);
     font-size: 1.4rem;
     font-weight: 700;
-    line-height: 140%;
 
     &:hover {
       background-color: var(--blue);
