@@ -323,7 +323,7 @@ header p {
 
 .priority {
   position: absolute;
-  top: 13rem;
+  top: 90%;
   left: 1.5rem;
   z-index: 1;
   border-radius: 0.8rem;
