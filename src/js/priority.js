@@ -1,17 +1,17 @@
 export function priority() {
   const buttonPriority = document.querySelectorAll('.tag');
-  const tagPriority = document.querySelector('.tag span');
+  const tagPriority = document.querySelectorAll('.tag span');
   const priorityBox = document.querySelectorAll('.priority');
 
   for (let i = 0; i < priorityBox.length; i++) {
     buttonPriority[i].addEventListener('click', () => {
       priorityBox[i].classList.toggle('hide');
-      window.addEventListener('click', e => {
+      priorityBox[i].addEventListener('click', e => {
         if (e.target.tagName === 'P') {
           const tag = e.target.innerText;
-          tagPriority.textContent = tag;
+          tagPriority[i].textContent = tag;
 
-          switch (tagPriority.textContent) {
+          switch (tagPriority[i].textContent) {
             case 'BAIXA':
               buttonPriority[i].classList.add('low');
               buttonPriority[i].classList.remove('medium');
