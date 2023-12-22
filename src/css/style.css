@@ -113,29 +113,23 @@ h3 {
   align-items: center;
   gap: 0.8rem;
   color: var(--gray-300);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.2rem;
+}
+.tag.high span, .tag.low span, .tag.medium span {
+  border-radius: 0.5rem;
+  color: var(--gray-700);
+  padding: 0.2rem 0.4rem 0;
 }
 .tag.high span {
   background-color: var(--danger);
-  border-radius: 0.5rem;
   color: var(--gray-100);
-  padding: 0.2rem 0.4rem 0;
 }
 .tag.low span {
   background-color: var(--green);
-  border-radius: 0.5rem;
-  color: var(--gray-100);
-  padding: 0.2rem 0.4rem 0;
 }
 .tag.medium span {
   background-color: var(--warning);
-  border-radius: 0.5rem;
-  color: var(--gray-100);
-  padding: 0.2rem 0.4rem 0;
-}
-.tag:hover {
-  color: var(--gray-200);
 }
 
 input,
@@ -235,38 +229,45 @@ li:hover {
   border: 0.1rem solid var(--gray-400);
   background-color: var(--gray-500);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
-  padding: 1.6rem;
+  padding: 1.6rem 0;
   margin-bottom: 1.6rem;
 }
 .priority .priority-list {
   text-align: left;
-  width: 13rem;
 }
 .priority .priority-list .list-item {
   display: flex;
   align-items: center;
 }
+.priority .priority-list .list-item:hover {
+  color: var(--gray-100);
+  background-color: var(--gray-400);
+}
 .priority .priority-list .list-item p {
   color: var(--gray-300);
-  padding: 1rem;
+  padding: 1rem 3rem 1rem 1rem;
   cursor: pointer;
 }
 .priority .priority-list .list-item p:hover {
   color: var(--gray-100);
+  background-color: var(--gray-400);
 }
 .priority .priority-list .list-item .cicle-low {
+  margin-left: 1.4rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
   background-color: var(--green);
 }
 .priority .priority-list .list-item .cicle-medium {
+  margin-left: 1.4rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
   background-color: var(--warning);
 }
 .priority .priority-list .list-item .cicle-high {
+  margin-left: 1.4rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -381,11 +382,12 @@ header p {
   padding: 2.4rem;
 }
 .input-wrapper .input-data {
+  position: relative;
   background-color: var(--gray-600);
   border-radius: 0.8rem;
   max-width: 50rem;
   width: 100%;
-  padding: 3rem;
+  padding: 5rem 3rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -400,6 +402,13 @@ header p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.input-wrapper .input-data .close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  color: var(--gray-300);
+  font-size: 1.8rem;
 }
 
 .new-task {

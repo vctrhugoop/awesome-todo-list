@@ -5,7 +5,7 @@ export class NewTask {
   }
 
   load() {
-    this.entries = [];
+    this.entries = [{}];
   }
 }
 

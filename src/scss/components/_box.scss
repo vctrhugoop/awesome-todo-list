@@ -7,39 +7,47 @@
   border: 0.1rem solid var(--gray-400);
   background-color: var(--gray-500);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
-  padding: 1.6rem;
+  padding: 1.6rem 0;
   margin-bottom: 1.6rem;
 
   .priority-list {
     text-align: left;
-    width: 13rem;
 
     .list-item {
       display: flex;
       align-items: center;
 
+      &:hover {
+        color: var(--gray-100);
+        background-color: var(--gray-400);
+      }
+
       p {
         color: var(--gray-300);
-        padding: 1rem;
+        padding: 1rem 3rem 1rem 1rem;
         cursor: pointer;
         &:hover {
           color: var(--gray-100);
+          background-color: var(--gray-400);
         }
       }
 
       .cicle-low {
+        margin-left: 1.4rem;
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
         background-color: var(--green);
       }
       .cicle-medium {
+        margin-left: 1.4rem;
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
         background-color: var(--warning);
       }
       .cicle-high {
+        margin-left: 1.4rem;
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
