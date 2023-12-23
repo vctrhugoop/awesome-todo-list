@@ -142,7 +142,7 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  border: 1px solid var(--blue-dark);
+  outline: 1px solid var(--blue-dark);
 }
 input::placeholder,
 textarea::placeholder {
@@ -252,26 +252,19 @@ li:hover {
   color: var(--gray-100);
   background-color: var(--gray-400);
 }
-.priority .priority-list .list-item .cicle-low {
+.priority .priority-list .list-item .tag-icon {
+  display: flex;
+  align-items: center;
   margin-left: 1.4rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--green);
 }
-.priority .priority-list .list-item .cicle-medium {
-  margin-left: 1.4rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--warning);
+.priority .priority-list .list-item .tag-icon.tag-low {
+  color: var(--green);
 }
-.priority .priority-list .list-item .cicle-high {
-  margin-left: 1.4rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--danger);
+.priority .priority-list .list-item .tag-icon.tag-medium {
+  color: var(--warning);
+}
+.priority .priority-list .list-item .tag-icon.tag-high {
+  color: var(--danger);
 }
 
 header {
@@ -331,10 +324,16 @@ header p {
 .task-list {
   margin-top: 2.4rem;
   height: calc(100vh - 30rem);
+  padding-right: 0.2rem;
   overflow-y: scroll;
 }
 .task-list::-webkit-scrollbar {
-  display: none;
+  width: 1rem;
+}
+.task-list::-webkit-scrollbar-thumb {
+  background-color: var(--gray-400);
+  border-radius: 1rem;
+  border: 0.4rem solid transparent;
 }
 .task-list ul li {
   position: relative;

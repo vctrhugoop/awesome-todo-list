@@ -5,7 +5,18 @@ export class NewTask {
   }
 
   load() {
-    this.entries = [{}, {}, {}, {}];
+    this.entries = [
+      {
+        title: 'Tarefa 1',
+        description:
+          ' Lorem ipsum dolor sit amet. Aut nihil temporibus ea voluptatum incidunt ad libero rerum ut rerum aliquam ut possimus aliquid ut quam optio et omnis consequatur. ',
+      },
+      {
+        title: 'Tarefa 1',
+        description:
+          ' Lorem ipsum dolor sit amet. Aut nihil temporibus ea voluptatum incidunt ad libero rerum ut rerum aliquam ut possimus aliquid ut quam optio et omnis consequatur. ',
+      },
+    ];
   }
 }
 
@@ -63,15 +74,15 @@ export class NewTaskView extends NewTask {
       <div class="priority hide">
         <div class="priority-list">
           <div class="list-item">
-            <div class="cicle-low"></div>
+            <div class="tag-icon tag-low"><i class="ph-fill ph-tag-simple"></i></div>
             <p>BAIXA</p>
           </div>
           <div class="list-item">
-            <div class="cicle-medium"></div>
+            <div class="tag-icon tag-medium"><i class="ph-fill ph-tag-simple"></i></div>
             <p>MÉDIA</p>
           </div>
           <div class="list-item">
-            <div class="cicle-high"></div>
+            <div class="tag-icon tag-high"><i class="ph-fill ph-tag-simple"></i></div>
             <p>ALTA</p>
           </div>
         </div>

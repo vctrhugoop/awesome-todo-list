@@ -1,11 +1,19 @@
 .task-list {
   margin-top: 2.4rem;
   height: calc(100vh - 30rem);
+  padding-right: 0.2rem;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
-    display: none;
+    width: 1rem;
   }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-400);
+    border-radius: 1rem;
+    border: 0.4rem solid transparent;
+  }
+
   ul {
     li {
       position: relative;

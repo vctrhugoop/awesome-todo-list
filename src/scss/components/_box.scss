@@ -32,26 +32,20 @@
         }
       }
 
-      .cicle-low {
+      .tag-icon {
+        display: flex;
+        align-items: center;
         margin-left: 1.4rem;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        background-color: var(--green);
-      }
-      .cicle-medium {
-        margin-left: 1.4rem;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        background-color: var(--warning);
-      }
-      .cicle-high {
-        margin-left: 1.4rem;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        background-color: var(--danger);
+
+        &.tag-low {
+          color: var(--green);
+        }
+        &.tag-medium {
+          color: var(--warning);
+        }
+        &.tag-high {
+          color: var(--danger);
+        }
       }
     }
   }

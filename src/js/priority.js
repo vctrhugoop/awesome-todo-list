@@ -36,12 +36,5 @@ export function priority() {
         }
       });
     });
-
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        priorityBox[i].classList.add('hide');
-      }
-    });
   }
 }
