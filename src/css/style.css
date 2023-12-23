@@ -80,9 +80,6 @@ body #app {
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr max-content;
 }
-body #app main {
-  position: relative;
-}
 body .hide {
   display: none;
 }
@@ -131,6 +128,10 @@ h3 {
 .tag.medium span {
   background-color: var(--warning);
 }
+.tag.default {
+  background-color: none;
+  color: var(--gray-300);
+}
 
 input,
 textarea {
@@ -153,6 +154,9 @@ input {
   width: 100%;
   color: var(--gray-100);
   line-height: 140%;
+}
+input#search-task {
+  padding-right: 4.4rem;
 }
 
 textarea {
@@ -266,6 +270,9 @@ li:hover {
 .priority .priority-list .list-item .tag-icon.tag-high {
   color: var(--danger);
 }
+.priority .priority-list .list-item .tag-icon.tag-remove {
+  color: var(--gray-300);
+}
 
 header {
   display: flex;
@@ -283,15 +290,26 @@ header p {
 }
 
 .search {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
-  margin: 3.6rem auto;
 }
 .search #btn-search-task {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
   font-size: 2.4rem;
+  color: var(--gray-300);
+}
+
+.utils-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.4rem auto;
 }
 
 .info {
@@ -324,16 +342,10 @@ header p {
 .task-list {
   margin-top: 2.4rem;
   height: calc(100vh - 30rem);
-  padding-right: 0.2rem;
   overflow-y: scroll;
 }
 .task-list::-webkit-scrollbar {
-  width: 1rem;
-}
-.task-list::-webkit-scrollbar-thumb {
-  background-color: var(--gray-400);
-  border-radius: 1rem;
-  border: 0.4rem solid transparent;
+  display: none;
 }
 .task-list ul li {
   position: relative;
@@ -410,12 +422,6 @@ header p {
   font-size: 1.8rem;
 }
 
-.new-task {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-bottom: 1.8rem;
-}
 .new-task #btn-new-task {
   font-size: 2.4rem;
 }

@@ -20,6 +20,10 @@ input {
 
   color: var(--gray-100);
   line-height: 140%;
+
+  &#search-task {
+    padding-right: 4.4rem;
+  }
 }
 
 textarea {

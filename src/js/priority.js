@@ -32,7 +32,21 @@ export function priority() {
               buttonPriority[i].classList.remove('low');
               priorityBox[i].classList.add('hide');
               break;
+            default:
+              buttonPriority[i].classList.add('default');
+              buttonPriority[i].classList.remove('high');
+              buttonPriority[i].classList.remove('medium');
+              buttonPriority[i].classList.remove('low');
+              priorityBox[i].classList.add('hide');
+              tagPriority[i].textContent = 'Adicione uma prioridade';
+              break;
           }
+        }
+      });
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          priorityBox[i].classList.add('hide');
         }
       });
     });

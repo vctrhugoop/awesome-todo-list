@@ -21,12 +21,12 @@
   </head>
   <body>
     <div class="input-wrapper hide">
-      <div class="input-data">
+      <form id="form-wrapper" class="input-data">
         <button class="close"><i class="ph ph-x"></i></button>
         <label for="task-title" class="sr-only">Adicione uma nova tarefa</label>
         <input
           type="text"
-          name="ttask-title"
+          name="task-title"
           id="task-title"
           placeholder="Título"
         />
@@ -40,11 +40,16 @@
         ></textarea>
         <div class="btn-wrapper">
           <button class="btn" id="cancel-btn" name="Cancelar">Cancelar</button>
-          <button class="btn" id="task-btn" name="Criar nova tarefa">
+          <button
+            class="btn create"
+            id="task-btn"
+            name="Criar nova tarefa"
+            type="submit"
+          >
             Criar nova tarefa
           </button>
         </div>
-      </div>
+      </form>
     </div>
     <div id="app">
       <header>
@@ -58,18 +63,25 @@
         <p>Awesome</p>
       </header>
       <main>
-        <section class="search">
-          <label for="search-task" class="sr-only">Procurar tarefe</label>
-          <input
-            type="search"
-            name="search-task"
-            id="search-task"
-            placeholder="Pesquisar tarefa"
-          />
-          <button class="btn" id="btn-search-task" name="btn-search-task">
-            <i class="ph ph-magnifying-glass"></i>
-          </button>
-        </section>
+        <div class="utils-header">
+          <section class="search">
+            <label for="search-task" class="sr-only">Procurar tarefe</label>
+            <input
+              type="search"
+              name="search-task"
+              id="search-task"
+              placeholder="Pesquisar tarefa"
+            />
+            <button id="btn-search-task" name="btn-search-task">
+              <i class="ph ph-magnifying-glass"></i>
+            </button>
+          </section>
+          <section class="new-task">
+            <button class="btn" id="btn-new-task">
+              <i class="ph ph-plus"></i>
+            </button>
+          </section>
+        </div>
         <section class="info">
           <div class="info__content created-task">
             <p>Tarefas</p>
@@ -82,11 +94,6 @@
         </section>
         <section class="task-list">
           <ul></ul>
-        </section>
-        <section class="new-task">
-          <button class="btn" id="btn-new-task">
-            <i class="ph ph-plus"></i>
-          </button>
         </section>
         <section class="empty hide">
           <figure><img src="/src/assets/image-empty.svg" alt="" /></figure>

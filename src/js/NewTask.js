@@ -2,21 +2,32 @@ export class NewTask {
   constructor(root) {
     this.root = document.querySelector(root);
     this.load();
+    this.create();
   }
 
   load() {
-    this.entries = [
+    this.entries = JSON.parse(localStorage.getItem('@tasks:')) || [
       {
-        title: 'Tarefa 1',
-        description:
-          ' Lorem ipsum dolor sit amet. Aut nihil temporibus ea voluptatum incidunt ad libero rerum ut rerum aliquam ut possimus aliquid ut quam optio et omnis consequatur. ',
+        title: 'teste',
+        description: 'test',
       },
       {
-        title: 'Tarefa 1',
-        description:
-          ' Lorem ipsum dolor sit amet. Aut nihil temporibus ea voluptatum incidunt ad libero rerum ut rerum aliquam ut possimus aliquid ut quam optio et omnis consequatur. ',
+        title: 'teste',
+        description: 'test',
       },
     ];
+  }
+
+  add(entrie) {
+    this.entries = [entrie, ...this.entries];
+  }
+
+  delete(data) {
+    const filteredEntries = this.entries.filter(
+      entry => entry.title !== data.title
+    );
+    this.entries = filteredEntries;
+    this.update();
   }
 }
 
@@ -31,6 +42,7 @@ export class NewTaskView extends NewTask {
 
   update() {
     this.emptyState();
+
     this.removeAllTaskList();
 
     this.entries.forEach(data => {
@@ -38,6 +50,14 @@ export class NewTaskView extends NewTask {
 
       task.querySelector('.text h3').textContent = data.title;
       task.querySelector('.text p').textContent = data.description;
+
+      task.querySelector('.btn-remove').onclick = () => {
+        const isOk = confirm('Tem cerzeta que deseja remover essa terefa?');
+
+        if (isOk) {
+          this.delete(data);
+        }
+      };
 
       this.taskList.append(task);
     });
@@ -78,17 +98,51 @@ export class NewTaskView extends NewTask {
             <p>BAIXA</p>
           </div>
           <div class="list-item">
-            <div class="tag-icon tag-medium"><i class="ph-fill ph-tag-simple"></i></div>
+            <div class="tag-icon tag-medium">
+              <i class="ph-fill ph-tag-simple"></i>
+            </div>
             <p>MÉDIA</p>
           </div>
           <div class="list-item">
-            <div class="tag-icon tag-high"><i class="ph-fill ph-tag-simple"></i></div>
+            <div class="tag-icon tag-high">
+              <i class="ph-fill ph-tag-simple"></i>
+            </div>
             <p>ALTA</p>
+          </div>
+          <div class="list-item">
+            <div class="tag-icon tag-remove">
+            <i class="ph ph-x"></i>
+            </div>
+              <p>Remover prioridade</p>
           </div>
         </div>
       </div>`;
 
     return createlist;
+  }
+
+  create() {
+    const form = document.querySelector('form');
+    const inputTaskTitle = document.querySelector('#task-title');
+    const inputTaskDescription = document.querySelector('#task-description');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const title = inputTaskTitle.value;
+      const description = inputTaskDescription.value;
+
+      const entrie = {
+        title: title,
+        description: description,
+      };
+
+      this.add(entrie);
+      document.querySelector('.input-wrapper').classList.add('hide');
+
+      inputTaskTitle.value = '';
+      inputTaskDescription.value = '';
+    });
   }
 
   removeAllTaskList() {

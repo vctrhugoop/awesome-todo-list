@@ -46,6 +46,9 @@
         &.tag-high {
           color: var(--danger);
         }
+        &.tag-remove {
+          color: var(--gray-300);
+        }
       }
     }
   }
