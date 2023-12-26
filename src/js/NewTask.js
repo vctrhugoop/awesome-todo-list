@@ -18,11 +18,12 @@ export class NewTask {
     this.save();
   }
 
-  delete(data) {
+  delete(data, task) {
     const filteredEntries = this.entries.filter(
       entry => entry.title !== data.title
     );
     this.entries = filteredEntries;
+    task.remove();
     this.update();
     this.save();
   }
@@ -53,11 +54,11 @@ export class NewTaskView extends NewTask {
         const isOk = confirm('Tem cerzeta que deseja remover essa terefa?');
 
         if (isOk) {
-          this.delete(data);
+          this.delete(data, task);
         }
       };
 
-      this.taskList.append(task);
+      this.taskList.appendChild(task);
     });
 
     this.countTasks();
@@ -66,9 +67,8 @@ export class NewTaskView extends NewTask {
   }
 
   createTask() {
-    const createlist = Object.assign(document.createElement('li'), {
-      classList: ['task-wrapper'],
-    });
+    const createlist = document.createElement('li');
+    createlist.setAttribute('class', 'task-wrapper');
 
     createlist.innerHTML = `
         <div class="content">
@@ -148,7 +148,7 @@ export class NewTaskView extends NewTask {
   }
 
   removeAllTaskList() {
-    this.taskList.querySelectorAll('ul').forEach(list => {
+    this.taskList.querySelectorAll('li').forEach(list => {
       list.remove();
     });
   }
