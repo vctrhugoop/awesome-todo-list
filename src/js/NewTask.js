@@ -248,7 +248,7 @@ export class NewTaskView extends NewTask {
           title = title.textContent.toLowerCase();
           description = description.textContent.toLowerCase();
 
-          let filterText = filterElement.value;
+          let filterText = filterElement.value.toLowerCase();
 
           if (
             !title.includes(filterText) &&
