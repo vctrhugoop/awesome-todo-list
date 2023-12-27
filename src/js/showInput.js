@@ -5,6 +5,7 @@ const newTaskInput = document.querySelector('.input-wrapper');
 
 addNewTaskButton.addEventListener('click', () => {
   newTaskInput.classList.remove('hide');
+  newTaskInput.querySelector('input').focus();
 });
 
 cancelButton.addEventListener('click', () => {
