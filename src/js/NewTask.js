@@ -267,6 +267,10 @@ export class NewTaskView extends NewTask {
     });
   }
 
+  edit() {
+    const buttonEdit = document.querySelectorAll('.btn-edit');
+  }
+
   emptyState() {
     if (this.entries.length === 0) {
       this.root.querySelector('.empty').classList.remove('hide');
