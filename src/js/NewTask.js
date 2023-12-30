@@ -199,6 +199,10 @@ export class NewTaskView extends NewTask {
         createdTask[i].classList.add('concluded');
         changeIconRegular[i].classList.add('hide');
         changeIconFill[i].classList.remove('hide');
+
+        countConcluded.textContent = `${
+          document.querySelectorAll('.concluded').length
+        } de ${createdTask.length}`;
       }
     }
   }
