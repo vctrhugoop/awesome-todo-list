@@ -45,7 +45,10 @@ export class NewTaskView extends NewTask {
     this.removeAllTaskList();
 
     this.entries.forEach(data => {
-      const task = this.createTask();
+      const task = this.createTask({
+        priority: data.priority,
+        isCompleted: data.isCompleted,
+      });
 
       task.querySelector('.text h3').textContent = data.title;
       task.querySelector('.text p').textContent = data.description;
@@ -66,9 +69,13 @@ export class NewTaskView extends NewTask {
     this.search();
   }
 
-  createTask() {
+  createTask(status) {
+    const { priority, isCompleted } = status;
     const createlist = document.createElement('li');
-    createlist.setAttribute('class', 'task-wrapper');
+
+    const classes = isCompleted ? 'ph-fill ph-check-circle' : 'ph ph-circle';
+
+    createlist.setAttribute('class', `task-wrapper`);
 
     createlist.innerHTML = `
         <div class="content">
@@ -137,6 +144,8 @@ export class NewTaskView extends NewTask {
       const entrie = {
         title: title,
         description: description,
+        priority: null,
+        isCompleted: false,
       };
 
       this.add(entrie);
@@ -156,8 +165,7 @@ export class NewTaskView extends NewTask {
   countTasks() {
     const createdTask = document.querySelectorAll('.task-wrapper');
     const buttonCheck = document.querySelectorAll('.btn-check');
-    const changeIconFill = document.querySelectorAll('.btn-check .ph');
-    const changeIconCheck = document.querySelectorAll('.btn-check .ph-circle');
+    const changeIconFill = document.querySelectorAll('.btn-check i');
     const countCreated = document.querySelector('.created-task span');
     const countConcluded = document.querySelector('.concluded-task span');
 
@@ -169,14 +177,23 @@ export class NewTaskView extends NewTask {
     for (let i = 0; i < createdTask.length; i++) {
       buttonCheck[i].addEventListener('click', () => {
         createdTask[i].classList.toggle('concluded');
-        changeIconFill[i].classList.toggle('ph-fill');
-        changeIconCheck[i].classList.toggle('ph-circle');
-        changeIconCheck[i].classList.toggle('ph-check-circle');
+        this.entries[i].isCompleted = !this.entries[i].isCompleted;
 
         countConcluded.textContent = `${
           document.querySelectorAll('.concluded').length
         } de ${createdTask.length}`;
+
+        this.save();
       });
+
+      if (this.entries[i].isCompleted) {
+        createdTask[i].classList.add('concluded');
+        changeIconFill[i].classList.add('ph-fill', 'ph-check-circle');
+        changeIconFill[i].classList.remove('ph', 'ph-circle');
+      } else {
+        changeIconFill[i].classList.add('ph', 'ph-circle');
+        changeIconFill[i].classList.remove('ph-fill', 'ph-check-circle');
+      }
     }
   }
 
@@ -196,34 +213,36 @@ export class NewTaskView extends NewTask {
             switch (tagPriority[i].textContent) {
               case 'BAIXA':
                 buttonPriority[i].classList.add('low');
-                buttonPriority[i].classList.remove('medium');
-                buttonPriority[i].classList.remove('high');
+                buttonPriority[i].classList.remove('medium', 'high');
                 priorityBox[i].classList.add('hide');
+                this.entries[i].priority = 'BAIXA';
+
                 break;
 
               case 'MÉDIA':
                 buttonPriority[i].classList.add('medium');
-                buttonPriority[i].classList.remove('low');
-                buttonPriority[i].classList.remove('high');
+                buttonPriority[i].classList.remove('low', 'high');
                 priorityBox[i].classList.add('hide');
+                this.entries[i].priority = 'MÉDIA';
                 break;
 
               case 'ALTA':
                 buttonPriority[i].classList.add('high');
-                buttonPriority[i].classList.remove('medium');
-                buttonPriority[i].classList.remove('low');
+                buttonPriority[i].classList.remove('medium', 'low');
                 priorityBox[i].classList.add('hide');
+                this.entries[i].priority = 'ALTA';
                 break;
               default:
                 buttonPriority[i].classList.add('default');
-                buttonPriority[i].classList.remove('high');
-                buttonPriority[i].classList.remove('medium');
-                buttonPriority[i].classList.remove('low');
+                buttonPriority[i].classList.remove('high', 'medium', 'low');
                 priorityBox[i].classList.add('hide');
                 tagPriority[i].textContent = 'Adicione uma prioridade';
+                this.entries[i].priority = null;
                 break;
             }
           }
+
+          this.save();
         });
         window.addEventListener('keydown', e => {
           if (e.key === 'Escape') {
