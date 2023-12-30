@@ -249,14 +249,8 @@ export class NewTaskView extends NewTask {
                 this.entries[i].priority = null;
                 break;
             }
-            this.save();
-          }
-        });
 
-        window.addEventListener('keydown', e => {
-          if (e.key === 'Escape') {
-            e.preventDefault();
-            priorityBox[i].classList.add('hide');
+            this.save();
           }
         });
       });
@@ -271,6 +265,13 @@ export class NewTaskView extends NewTask {
         tagPriority[i].textContent = 'ALTA';
         buttonPriority[i].classList.add('high');
       }
+
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          priorityBox[i].classList.add('hide');
+        }
+      });
     }
   }
 
