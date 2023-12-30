@@ -73,13 +73,13 @@ export class NewTaskView extends NewTask {
     const { priority, isCompleted } = status;
     const createlist = document.createElement('li');
 
-    const classes = isCompleted ? 'ph-fill ph-check-circle' : 'ph ph-circle';
-
     createlist.setAttribute('class', `task-wrapper`);
 
     createlist.innerHTML = `
         <div class="content">
-          <button class="btn-check"><i class="ph ph-circle"></i></button>
+          <button class="btn-check">
+          <i class="ph ph-circle"></i>
+          <i class="ph-fill ph-check-circle hide"></i></button>
           <div class="text">
             <h3></h3>
             <p>
@@ -165,7 +165,8 @@ export class NewTaskView extends NewTask {
   countTasks() {
     const createdTask = document.querySelectorAll('.task-wrapper');
     const buttonCheck = document.querySelectorAll('.btn-check');
-    const changeIconFill = document.querySelectorAll('.btn-check i');
+    const changeIconRegular = document.querySelectorAll('.btn-check .ph');
+    const changeIconFill = document.querySelectorAll('.btn-check .ph-fill');
     const countCreated = document.querySelector('.created-task span');
     const countConcluded = document.querySelector('.concluded-task span');
 
@@ -177,6 +178,14 @@ export class NewTaskView extends NewTask {
     for (let i = 0; i < createdTask.length; i++) {
       buttonCheck[i].addEventListener('click', () => {
         createdTask[i].classList.toggle('concluded');
+        if (createdTask[i].classList.contains('concluded')) {
+          changeIconRegular[i].classList.add('hide');
+          changeIconFill[i].classList.remove('hide');
+        } else {
+          changeIconRegular[i].classList.remove('hide');
+          changeIconFill[i].classList.add('hide');
+        }
+
         this.entries[i].isCompleted = !this.entries[i].isCompleted;
 
         countConcluded.textContent = `${
@@ -188,11 +197,8 @@ export class NewTaskView extends NewTask {
 
       if (this.entries[i].isCompleted) {
         createdTask[i].classList.add('concluded');
-        changeIconFill[i].classList.add('ph-fill', 'ph-check-circle');
-        changeIconFill[i].classList.remove('ph', 'ph-circle');
-      } else {
-        changeIconFill[i].classList.add('ph', 'ph-circle');
-        changeIconFill[i].classList.remove('ph-fill', 'ph-check-circle');
+        changeIconRegular[i].classList.add('hide');
+        changeIconFill[i].classList.remove('hide');
       }
     }
   }
