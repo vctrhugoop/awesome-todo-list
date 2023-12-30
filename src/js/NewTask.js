@@ -225,22 +225,21 @@ export class NewTaskView extends NewTask {
                 buttonPriority[i].classList.add('low');
                 buttonPriority[i].classList.remove('medium', 'high');
                 priorityBox[i].classList.add('hide');
-                this.entries[i].priority = 'BAIXA';
-
+                this.entries[i].priority = tagPriority[i].textContent;
                 break;
 
               case 'MÉDIA':
                 buttonPriority[i].classList.add('medium');
                 buttonPriority[i].classList.remove('low', 'high');
                 priorityBox[i].classList.add('hide');
-                this.entries[i].priority = 'MÉDIA';
+                this.entries[i].priority = tagPriority[i].textContent;
                 break;
 
               case 'ALTA':
                 buttonPriority[i].classList.add('high');
                 buttonPriority[i].classList.remove('medium', 'low');
                 priorityBox[i].classList.add('hide');
-                this.entries[i].priority = 'ALTA';
+                this.entries[i].priority = tagPriority[i].textContent;
                 break;
               default:
                 buttonPriority[i].classList.add('default');
@@ -250,10 +249,10 @@ export class NewTaskView extends NewTask {
                 this.entries[i].priority = null;
                 break;
             }
+            this.save();
           }
-
-          this.save();
         });
+
         window.addEventListener('keydown', e => {
           if (e.key === 'Escape') {
             e.preventDefault();
@@ -261,6 +260,17 @@ export class NewTaskView extends NewTask {
           }
         });
       });
+
+      if (this.entries[i].priority === 'BAIXA') {
+        tagPriority[i].textContent = 'BAIXA';
+        buttonPriority[i].classList.add('low');
+      } else if (this.entries[i].priority === 'MÉDIA') {
+        tagPriority[i].textContent = 'MÉDIA';
+        buttonPriority[i].classList.add('medium');
+      } else if (this.entries[i].priority === 'ALTA') {
+        tagPriority[i].textContent = 'ALTA';
+        buttonPriority[i].classList.add('high');
+      }
     }
   }
 
