@@ -50,9 +50,9 @@ $ npm start
 
 Abra o aplicativo em seu navegador e comece a organizar suas tarefas!
 
-### 🚀 Demo 
+### 💻 Live Preview
 
-[Preview](https://awesometodolist-v1.vercel.app)
+Confira a demonstração do projeto [aqui](https://awesometodolist-v1.vercel.app).
 
 
 ### 🖇️ Contribuindo
