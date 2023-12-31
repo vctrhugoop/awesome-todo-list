@@ -12,9 +12,7 @@ Bem-vindo ao Awesome To-Do List, uma aplicação incrível para gerenciar suas t
 
 - **Adição de Tarefas**: Adicione facilmente novas tarefas com descrições detalhadas.
 - **Priorização**: Atribua prioridades às suas tarefas para focar no que é mais importante.
-- **Data de Vencimento**: Defina prazos para suas tarefas e receba lembretes automáticos.
 - **Marcação de Conclusão**: Marque tarefas como concluídas para um acompanhamento visual do progresso.
-- **Categorias Personalizadas**: Organize suas tarefas em categorias personalizadas para uma gestão mais eficiente.
 
 ### 🛠️ Tecnologias Utilizadas
 
