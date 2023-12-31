@@ -54,7 +54,7 @@ export class NewTaskView extends NewTask {
       task.querySelector('.text p').textContent = data.description;
 
       task.querySelector('.btn-remove').onclick = () => {
-        const isOk = confirm('Tem cerzeta que deseja remover essa terefa?');
+        const isOk = confirm('Tem certeza que deseja remover essa terefa?');
 
         if (isOk) {
           this.delete(data, task);
