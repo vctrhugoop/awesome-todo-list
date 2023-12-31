@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-  <a href="https://git-fav-orcin.vercel.app/" target=_blank >
+  <a href="https://awesometodolist-v1.vercel.app/" target=_blank >
     <img src="/src/assets/logo.png" alt="Logo" style="width: 50px">
   </a>
   <h1 align="center">Awesome To-Do List</h1>
@@ -24,7 +24,7 @@ Bem-vindo ao Awesome To-Do List, uma aplicação incrível para gerenciar suas t
 ### 📚 Bibliotecas
 
 - [Google Fonts](https://fonts.google.com/)
-- [Remix Icons](https://remixicon.com/)
+- [Phosphor Icons](https://phosphoricons.com/)
 
 ### 🔧 Como Instalar e Executar
 
@@ -45,6 +45,11 @@ $ npm start
 ~~~
 
 Abra o aplicativo em seu navegador e comece a organizar suas tarefas!
+
+### 🚀 Demo 
+
+[Preview](https://awesometodolist-v1.vercel.app)
+
 
 ### 🖇️ Contribuindo
 Estamos abertos a contribuições para tornar este aplicativo ainda mais incrível! Se você tiver sugestões de recursos, encontrar bugs ou quiser contribuir de outra forma, por favor, abra uma issue ou envie um pull request.
