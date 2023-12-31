@@ -45,7 +45,7 @@ $ cd awesome-todo-list
 $ npm install
 
 # Execute a aplicação
-$ npm start 
+$ npm run dev 
 ~~~
 
 Abra o navegador e acesse http://localhost:3000. e comece a organizar suas tarefas!
