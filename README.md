@@ -48,7 +48,7 @@ $ npm install
 $ npm start 
 ~~~
 
-Abra o aplicativo em seu navegador e comece a organizar suas tarefas!
+Abra o navegador e acesse http://localhost:3000. e comece a organizar suas tarefas!
 
 ### 💻 Live Preview
 
