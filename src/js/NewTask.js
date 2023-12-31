@@ -266,7 +266,16 @@ export class NewTaskView extends NewTask {
         buttonPriority[i].classList.add('high');
       }
 
-      window.addEventListener('keydown', e => {
+      document.addEventListener('click', e => {
+        if (
+          !priorityBox[i].contains(e.target) &&
+          !buttonPriority[i].contains(e.target)
+        ) {
+          priorityBox[i].classList.add('hide');
+        }
+      });
+
+      document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
           e.preventDefault();
           priorityBox[i].classList.add('hide');
