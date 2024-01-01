@@ -45,14 +45,14 @@ $ cd awesome-todo-list
 $ npm install
 
 # Execute a aplicação
-$ npm start 
+$ npm run dev 
 ~~~
 
-Abra o aplicativo em seu navegador e comece a organizar suas tarefas!
+Abra o navegador e acesse http://localhost:3000. e comece a organizar suas tarefas!
 
-### 🚀 Demo 
+### 💻 Live Preview
 
-[Preview](https://awesometodolist-v1.vercel.app)
+Confira a demonstração do projeto [aqui](https://awesometodolist-v1.vercel.app).
 
 
 ### 🖇️ Contribuindo
