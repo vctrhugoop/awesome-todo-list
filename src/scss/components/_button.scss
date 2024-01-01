@@ -28,14 +28,10 @@ button {
   }
 
   &.btn-check,
-  &.btn-remove,
-  &.btn-edit {
+  &.btn-remove {
     font-size: 1.8rem;
     cursor: pointer;
     color: var(--gray-300);
-  }
-  &.btn-edit:hover {
-    color: var(--warning);
   }
 
   &.btn-remove {

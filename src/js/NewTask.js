@@ -69,8 +69,7 @@ export class NewTaskView extends NewTask {
     this.search();
   }
 
-  createTask(status) {
-    const { priority, isCompleted } = status;
+  createTask() {
     const createlist = document.createElement('li');
 
     createlist.setAttribute('class', `task-wrapper`);
@@ -92,9 +91,6 @@ export class NewTaskView extends NewTask {
             <span>Adicione uma prioridade</span>
           </button>
           <div class="btn-utils">
-            <button class="btn-edit">
-              <i class="ph ph-pencil-simple"></i>
-            </button>
             <button class="btn-remove">
               <i class="ph ph-trash"></i>
             </button>
@@ -314,10 +310,6 @@ export class NewTaskView extends NewTask {
         }
       }
     });
-  }
-
-  edit() {
-    const buttonEdit = document.querySelectorAll('.btn-edit');
   }
 
   emptyState() {
