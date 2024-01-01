@@ -9,7 +9,7 @@
 Bem-vindo ao Awesome To-Do List, uma aplicação incrível para gerenciar suas tarefas diárias com eficiência. Esta aplicação foi projetada para oferecer uma experiência intuitiva e funcionalidades avançadas para melhorar a organização e produtividade.
 
 <div align="center">
-    <img src="./.github/preview.png" alt="preview"> 
+    <img src="./.github/preview-image.png" alt="preview"> 
 </div>
 
 ### 🚀 Funcionalidades Principais
