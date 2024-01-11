@@ -1,7 +1,7 @@
 .task-list {
   margin-top: 2.4rem;
   height: calc(100vh - 30rem);
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     display: none;

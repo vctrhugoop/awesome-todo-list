@@ -189,13 +189,10 @@ button#cancel-btn:hover {
   background-color: var(--blue-dark);
   color: var(--gray-100);
 }
-button.btn-check, button.btn-remove, button.btn-edit {
+button.btn-check, button.btn-remove {
   font-size: 1.8rem;
   cursor: pointer;
   color: var(--gray-300);
-}
-button.btn-edit:hover {
-  color: var(--warning);
 }
 button.btn-remove:hover {
   color: var(--danger);
@@ -342,7 +339,7 @@ header p {
 .task-list {
   margin-top: 2.4rem;
   height: calc(100vh - 30rem);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .task-list::-webkit-scrollbar {
   display: none;
